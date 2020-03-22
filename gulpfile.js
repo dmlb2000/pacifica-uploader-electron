@@ -22,6 +22,7 @@ gulp.task('js', () => { // 3.
 gulp.task('build', gulp.series('html', 'css', 'js'));
 // 4. Start the electron process.
 gulp.task('start', gulp.series('build', () => { // 4.
+    process.env.ELECTRON_ENV = 'development';
     return exec(
         __dirname+'/node_modules/.bin/electron .'
     ).on('close', () => process.exit());

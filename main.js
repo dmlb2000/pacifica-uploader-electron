@@ -15,7 +15,9 @@ function createWindow () {
   win.loadFile(path.join('app', 'index.html'))
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  if (process.env.ELECTRON_ENV === 'development') {
+    win.webContents.openDevTools()
+  }
 }
 
 // This method will be called when Electron has finished
