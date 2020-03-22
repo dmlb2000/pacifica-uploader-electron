@@ -1,22 +1,48 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "name": "pacifica-uploader-react",
+  "version": "0.0.1",
+  "description": "An Electron React Pacifica Uploader Application.",
+  "main": "app/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "gulp start",
+    "build": "gulp build",
+    "release-linux": "npx electron-builder --linux",
+    "release-macos": "npx electron-builder --macos",
+    "release-windows": "npx electron-builder --windows"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/dmlb2000/pacifica-uploader-electron",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Electron"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": {
+    "name" : "David Brown",
+    "email": "dmlb2000@gmail.com",
+    "url" : "https://github.com/dmlb2000"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
   "devDependencies": {
-    "electron": "^8.1.1"
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.1",
+    "asar": "^3.0.1",
+    "electron": "^8.1.1",
+    "electron-builder": "^22.4.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1"
+  },
+  "build": {
+    "appId": "org.pacifica.uploader",
+    "files": [
+      "app/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "publish": null
   }
 }
